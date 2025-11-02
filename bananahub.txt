@@ -3,7 +3,7 @@ local v15 = v14:CreateWindow({
     Title = "Banana Dog Hub-Blox Fruit [ Premium ]",-- thay tên bạn muốn đặt
     SubTitle = "By Chien",-- tên bạn
     TabWidth = 160,
-    Theme = "rainbow",--màu
+    Theme = "Dark",--màu
     Acrylic = false,
     Size = UDim2.fromOffset(500, 320),
     MinimizeKey = Enum.KeyCode.End
@@ -13,10 +13,47 @@ local v16 = {
         Title = "Tab Information"
     }),
     Main = v15:AddTab({
-        Title = "Tab pvp"
+        Title = "Tab Cày"
+    }),
+    Sea = v15:AddTab({
+        Title = "Tab Volcano And Sea Event"
+    }),
+    ITM = v15:AddTab({
+        Title = "Tab Farming Other"
+    }),
+    Setting = v15:AddTab({
+        Title = "Setting Farm"
     }),
     Status = v15:AddTab({
         Title = "Tab Status And Server"
+    }),
+    Stats = v15:AddTab({
+        Title = "Tab Stats"
+    }),
+    Player = v15:AddTab({
+        Title = "Tab Local Player"
+    }),
+    Teleport = v15:AddTab({
+        Title = "Tab Teleport"
+    }),
+    Visual = v15:AddTab({
+        Title = "Tab Visual"
+    }),
+    Fruit = v15:AddTab({
+        Title = "Tab Esp And Fruit"
+    }),
+    Raid = v15:AddTab({
+        Title = "Tab Raid"
+    }),
+    Race = v15:AddTab({
+        Title = "Tab Upgrade Race"
+    }),
+    Shop = v15:AddTab({
+        Title = "Tab Shop"
+    }),
+    Misc = v15:AddTab({
+        Title = "Tab Misc"
+    })
 };
 local v17 = v14.Options;
 local v18 = game.PlaceId;
@@ -45,7 +82,83 @@ elseif (v19 == 4442272183) then
 elseif (v19 == 7449423635) then
     Sea3 = true;
 end
-
+function CheckLevel()
+    local v197 = game:GetService("Players").LocalPlayer.Data.Level.Value;
+    if Sea1 then
+        if ((v197 == 1) or (v197 <= 9) or (SelectMonster == "Bandit")) then
+            Ms = "Bandit";
+            NameQuest = "BanditQuest1";
+            QuestLv = 1;
+            NameMon = "Bandit";
+            CFrameQ = CFrame.new(1060.9383544922, 16.455066680908, 1547.7841796875);
+            CFrameMon = CFrame.new(1038.5533447266, 41.296249389648, 1576.5098876953);
+        elseif ((v197 == 10) or (v197 <= 14) or (SelectMonster == "Monkey")) then
+            Ms = "Monkey";
+            NameQuest = "JungleQuest";
+            QuestLv = 1;
+            NameMon = "Monkey";
+            CFrameQ = CFrame.new(- 1601.6553955078, 36.85213470459, 153.38809204102);
+            CFrameMon = CFrame.new(- 1448.1446533203, 50.851993560791, 63.60718536377);
+        elseif ((v197 == 15) or (v197 <= 29) or (SelectMonster == "Gorilla")) then
+            Ms = "Gorilla";
+            NameQuest = "JungleQuest";
+            QuestLv = 2;
+            NameMon = "Gorilla";
+            CFrameQ = CFrame.new(- 1601.6553955078, 36.85213470459, 153.38809204102);
+            CFrameMon = CFrame.new(- 1142.6488037109, 40.462348937988, - 515.39227294922);
+        elseif ((v197 == 30) or (v197 <= 39) or (SelectMonster == "Pirate")) then
+            Ms = "Pirate";
+            NameQuest = "BuggyQuest1";
+            QuestLv = 1;
+            NameMon = "Pirate";
+            CFrameQ = CFrame.new(- 1140.1761474609, 4.752049446106, 3827.4057617188);
+            CFrameMon = CFrame.new(- 1201.0881347656, 40.628940582275, 3857.5966796875);
+        elseif ((v197 == 40) or (v197 <= 59) or (SelectMonster == "Brute")) then
+            Ms = "Brute";
+            NameQuest = "BuggyQuest1";
+            QuestLv = 2;
+            NameMon = "Brute";
+            CFrameQ = CFrame.new(- 1140.1761474609, 4.752049446106, 3827.4057617188);
+            CFrameMon = CFrame.new(- 1387.5324707031, 24.592035293579, 4100.9575195313);
+        elseif ((v197 == 60) or (v197 <= 74) or (SelectMonster == "Desert Bandit")) then
+            Ms = "Desert Bandit";
+            NameQuest = "DesertQuest";
+            QuestLv = 1;
+            NameMon = "Desert Bandit";
+            CFrameQ = CFrame.new(896.51721191406, 6.4384617805481, 4390.1494140625);
+            CFrameMon = CFrame.new(984.99896240234, 16.109552383423, 4417.91015625);
+        elseif ((v197 == 75) or (v197 <= 89) or (SelectMonster == "Desert Officer")) then
+            Ms = "Desert Officer";
+            NameQuest = "DesertQuest";
+            QuestLv = 2;
+            NameMon = "Desert Officer";
+            CFrameQ = CFrame.new(896.51721191406, 6.4384617805481, 4390.1494140625);
+            CFrameMon = CFrame.new(1547.1510009766, 14.452038764954, 4381.8002929688);
+        elseif ((v197 == 90) or (v197 <= 99) or (SelectMonster == "Snow Bandit")) then
+            Ms = "Snow Bandit";
+            NameQuest = "SnowQuest";
+            QuestLv = 1;
+            NameMon = "Snow Bandit";
+            CFrameQ = CFrame.new(1386.8073730469, 87.272789001465, - 1298.3576660156);
+            CFrameMon = CFrame.new(1356.3028564453, 105.76865386963, - 1328.2418212891);
+        elseif ((v197 == 100) or (v197 <= 119) or (SelectMonster == "Snowman")) then
+            Ms = "Snowman";
+            NameQuest = "SnowQuest";
+            QuestLv = 2;
+            NameMon = "Snowman";
+            CFrameQ = CFrame.new(1386.8073730469, 87.272789001465, - 1298.3576660156);
+            CFrameMon = CFrame.new(1218.7956542969, 138.01184082031, - 1488.0262451172);
+        elseif ((v197 == 120) or (v197 <= 149) or (SelectMonster == "Chief Petty Officer")) then
+            Ms = "Chief Petty Officer";
+            NameQuest = "MarineQuest2";
+            QuestLv = 1;
+            NameMon = "Chief Petty Officer";
+            CFrameQ = CFrame.new(- 5035.49609375, 28.677835464478, 4324.1840820313);
+            CFrameMon = CFrame.new(- 4931.1552734375, 65.793113708496, 4121.8393554688);
+        elseif ((v197 == 150) or (v197 <= 174) or (SelectMonster == "Sky Bandit")) then
+            Ms = "Sky Bandit";
+            NameQuest = "SkyQuest";
+            QuestLv = 1;
             NameMon = "Sky Bandit";
             CFrameQ = CFrame.new(- 4842.1372070313, 717.69543457031, - 2623.0483398438);
             CFrameMon = CFrame.new(- 4955.6411132813, 365.46365356445, - 2908.1865234375);
@@ -8293,7 +8406,7 @@ v16.Misc:AddButton({
 });
 local v56 = v16.Misc:AddSection("Misc");
 local v151 = v16.Misc:AddToggle("ToggleRejoin", {
-    Title = "vào lại",
+    Title = "Rejoin",
     Description = "",
     Default = true
 });
@@ -8365,7 +8478,7 @@ spawn(function()
 end);
 local v56 = v16.Sea:AddSection("Leviathan");
 v16.Sea:AddButton({
-    Title = "mua Leviathan Chip",
+    Title = "Buy Leviathan Chip",
     Description = "",
     Callback = function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("InfoLeviathan", "2");
